@@ -21,6 +21,8 @@
 
   <div class="container-fluid">
     <div class="row">
+
+      <!-- Search Button and text input. -->
       <aside class="col-lg-3 bg-light">
         <h5 class="mt-1">Search for a City:</h5>
         <div class="form-inline form-group">
@@ -28,19 +30,37 @@
           <button class="btn btn-primary" id="search-button"><i class="fa fa-search"></i></button>
         </div>
 
-        <ul class="list-group history"></ul>
+        <!-- Search history slots -->
+        <div class="card" style="width: 27rem;">
+          <div class="card-header">
+            <b>History:</b>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">City Name 1</li>
+            <li class="list-group-item">City Name 2</li>
+            <li class="list-group-item">City Name 3</li>
+            <li class="list-group-item">City Name 4</li>
+            <li class="list-group-item">City Name 5</li>
+            <li class="list-group-item">City Name 6</li>
+            <li class="list-group-item">City Name 7</li>
+            <li class="list-group-item">City Name 8</li>
+          </ul>
+        </div>
       </aside>
 
-      <div class="card" style="width: 70rem; margin-top: 15px; margin-left: 15px;">
-        <div id="today" class="mt-3 card-body" style="padding-bottom: 0px;">
+      <div class="card" style="width: 70rem; margin-top: 15px; margin-left: 15px; height: 282px;">
+        <div id="today" class="mt-3 card-body" style="margin-bottom: 20px;">
           <h2 class="card-title">City Name and Date Here:</h2>
         </div>
-        
+
         <div id="forecast" class="">
           <p class="card-body" style="margin-bottom:0px; padding-bottom: 10px;">Temperature: (temp)</p>
-          <p class="card-body" style="margin-bottom:0px; padding-bottom: 10px; padding-top: 10px;">Humidity: (humidity)</p>
-          <p class="card-body" style="margin-bottom:0px; padding-bottom: 10px; padding-top: 10px;">Wind Speed: (wspeed)</p>
-          <p class="card-body" style="padding-bottom: 10px; padding-top: 10px;">UV Index: (UV)</p>
+          <p class="card-body" style="margin-bottom:0px; padding-bottom: 10px; padding-top: 10px;">Humidity: (humidity)
+          </p>
+          <p class="card-body" style="margin-bottom:0px; padding-bottom: 10px; padding-top: 10px;">Wind Speed: (wspeed)
+          </p>
+          <p class="card-body" style="padding-bottom: 10px; padding-top: 10px;">UV Index: <button
+              style="border: 1px solid rgb(5, 5, 5);" type="button" class="btn btn-danger">###</button></p>
         </div>
       </div>
     </div>
