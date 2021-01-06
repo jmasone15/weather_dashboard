@@ -1,3 +1,52 @@
-#todaycard {
-    margin-top: 15px;
+.search-card {
+    width: 27rem;
+}
+
+.cityweather {
+    width: 70rem; 
+    margin-top: 15px; 
+    margin-left: 15px; 
+    height: 282px;
+}
+
+.forecast-temp {
+    margin-bottom:0px; 
+    padding-bottom: 10px;
+}
+
+.forecast-hws {
+    margin-bottom:0px; 
+    padding-bottom: 10px; 
+    padding-top: 10px;
+}
+
+.forecast-uv {
+    padding-bottom: 10px; 
+    padding-top: 10px;
+}
+
+.uv-button {
+    border: 1px solid rgb(5, 5, 5);
+}
+
+.five-forecast {
+    width: 70rem; 
+    height: 242px; 
+    left: 100px;
+    bottom: 210px
+}
+
+.forecast-one {
+    width: 10rem; 
+    text-align: left;
+    border: 1px solid rgb(5, 5, 5);
+}
+
+.forecast-other {
+    width: 10rem; 
+    text-align: left; 
+    position: absolute; 
+    margin-left: 0px;
+    bottom: 24px;
+    border: 1px solid rgb(5, 5, 5);
 }

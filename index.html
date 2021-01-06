@@ -31,7 +31,7 @@
         </div>
 
         <!-- Search history slots -->
-        <div class="card" style="width: 27rem;">
+        <div class="card search-card">
           <div class="card-header">
             <b>History:</b>
           </div>
@@ -48,48 +48,48 @@
         </div>
       </aside>
 
-      <div class="card" style="width: 70rem; margin-top: 15px; margin-left: 15px; height: 282px;">
+      <div class="card cityweather">
         <div id="today" class="mt-3 card-body" style="margin-bottom: 20px;">
           <h2 class="card-title">City Name and Date Here:</h2>
         </div>
 
-        <div id="forecast" class="">
-          <p class="card-body" style="margin-bottom:0px; padding-bottom: 10px;">Temperature: (temp)</p>
-          <p class="card-body" style="margin-bottom:0px; padding-bottom: 10px; padding-top: 10px;">Humidity: (humidity)
+        <div id="forecast">
+          <p class="card-body forecast-temp">Temperature: (temp)</p>
+          <p class="card-body forecast-hws">Humidity: (humidity)
           </p>
-          <p class="card-body" style="margin-bottom:0px; padding-bottom: 10px; padding-top: 10px;">Wind Speed: (wspeed)
+          <p class="card-body forecast-hws">Wind Speed: (wspeed)
           </p>
-          <p class="card-body" style="padding-bottom: 10px; padding-top: 10px;">UV Index: <button
-              style="border: 1px solid rgb(5, 5, 5);" type="button" class="btn btn-danger">###</button></p>
+          <p class="card-body forecast-uv">UV Index: <button type="button" class="btn btn-danger uv-button">###</button>
+          </p>
         </div>
       </div>
-      <div class="card container-fluid" style="width: 70rem; height: 242px; left: 100px;bottom: 210px">
+      <div class="card container-fluid five-forecast">
         <h2 class="card-title">5-Day Forecast:</h2>
-        <button type="button" class="btn btn-primary" style="width: 10rem; text-align: left;">
+        <button type="button" class="btn btn-primary forecast-one">
           <h5>1/11/2021</h5>
           <p style="text-align: center;">Icon</p>
           <p>Temp:</p>
           <p>Humidity:</p>
         </button>
-        <button type="button" class="btn btn-primary" style="width: 10rem; text-align: left; position: absolute; margin-left: 0px;bottom: 24px;left: 200px;">
+        <button type="button" class="btn btn-primary forecast-other" style="left: 200px;">
           <h5>1/12/2021</h5>
           <p style="text-align: center;">Icon</p>
           <p>Temp:</p>
           <p>Humidity:</p>
         </button>
-        <button type="button" class="btn btn-primary" style="width: 10rem; text-align: left; position: absolute; margin-left: 0px;bottom: 24px;left: 385px;">
+        <button type="button" class="btn btn-primary forecast-other" style="left: 385px;">
           <h5>1/13/2021</h5>
           <p style="text-align: center;">Icon</p>
           <p>Temp:</p>
           <p>Humidity:</p>
         </button>
-        <button type="button" class="btn btn-primary" style="width: 10rem; text-align: left; position: absolute; margin-left: 0px;bottom: 24px;left: 570px;">
+        <button type="button" class="btn btn-primary forecast-other" style="left: 570px;">
           <h5>1/14/2021</h5>
           <p style="text-align: center;">Icon</p>
           <p>Temp:</p>
           <p>Humidity:</p>
         </button>
-        <button type="button" class="btn btn-primary" style="width: 10rem; text-align: left; position: absolute; margin-left: 0px;bottom: 24px;left: 755px;">
+        <button type="button" class="btn btn-primary forecast-other" style="left: 755px;">
           <h5>1/15/2021</h5>
           <p style="text-align: center;">Icon</p>
           <p>Temp:</p>
