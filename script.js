@@ -8,8 +8,7 @@ $(document).ready(function () {
         searchWeather(searchValue);
     })
 
-    let APIkey = "ed8b97e489f3133d4b5f41f0db8eaa8e";
-    let history = {};
+    let APIkey = "ed8b97e489f3133d4b5f41f0db8eaa8e"
 
     function searchWeather(searchValue) {
         $.ajax({
@@ -17,7 +16,7 @@ $(document).ready(function () {
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIkey,
             dataType: "json",
             success: function (data) {
-
+                
                 console.log(data)
 
                 let tempF = ((data.main.temp - 273.15) * 1.80 + 32).toFixed(1);
