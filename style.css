@@ -31,7 +31,7 @@
 
 .five-forecast {
     width: 70rem; 
-    height: 242px; 
+    height: 262px; 
     left: 100px;
     bottom: 210px
 }
@@ -49,4 +49,13 @@
     margin-left: 0px;
     bottom: 24px;
     border: 1px solid rgb(5, 5, 5);
+}
+
+#icon-main {
+    margin-left: 300px;
+}
+
+.image-div {
+    bottom: 55px;
+    right: 30px;
 }

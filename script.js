@@ -9,6 +9,7 @@ $(document).ready(function () {
     })
 
     let APIkey = "ed8b97e489f3133d4b5f41f0db8eaa8e";
+    let history = {};
 
     function searchWeather(searchValue) {
         $.ajax({
@@ -16,6 +17,8 @@ $(document).ready(function () {
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + APIkey,
             dataType: "json",
             success: function (data) {
+
+                console.log(data)
 
                 let tempF = ((data.main.temp - 273.15) * 1.80 + 32).toFixed(1);
 
@@ -35,6 +38,8 @@ $(document).ready(function () {
                     url: "https://api.openweathermap.org/data/2.5/uvi?lat=" + lattitude + "&lon=" + longitude + "&appid=" + APIkey,
                     dataType: "json",
                     success: function (data2) {
+
+                        console.log(data2)
 
                         console.log("UV Index: " + data2.value);
                         $(".uv-button").text(data2.value)
@@ -63,10 +68,18 @@ $(document).ready(function () {
                             var newdate = dt.getDate();
                             var formattedTime = month + '/' + newdate + '/' + year
                             console.log(formattedTime);
-                            return(formattedTime);
+                            return (formattedTime);
                         };
 
+                        let iconURL = "https://openweathermap.org/img/wn/";
+
                         $(".city-name").text(searchValue + " " + timeConverter(today));
+                        $("#icon-main").attr("src", iconURL + data3.daily[0].weather[0].icon + ".png")
+                        $("#icon-one").attr("src", iconURL + data3.daily[1].weather[0].icon + ".png")
+                        $("#icon-two").attr("src", iconURL + data3.daily[1].weather[0].icon + ".png")
+                        $("#icon-three").attr("src", iconURL + data3.daily[1].weather[0].icon + ".png")
+                        $("#icon-four").attr("src", iconURL + data3.daily[1].weather[0].icon + ".png")
+                        $("#icon-five").attr("src", iconURL + data3.daily[1].weather[0].icon + ".png")
 
                         $(".forecast-ones").text(timeConverter(dayOne));
                         $(".forecast-twos").text(timeConverter(dayTwo));
