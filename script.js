@@ -26,13 +26,18 @@ $(document).ready(function () {
                 let lattitude = data.coord.lat
                 let longitude = data.coord.lon
 
+                $(".forecast-temp").text("Temperature (F): " + tempF)
+                $(".forecast-hws").text("Humidity: " + data.main.humidity)
+                $(".forecast-ws").text("Wind Speed: " + data.wind.speed)
+
                 $.ajax({
                     type: "GET",
                     url: "https://api.openweathermap.org/data/2.5/uvi?lat=" + lattitude + "&lon=" + longitude + "&appid=" + APIkey,
                     dataType: "json",
-                    success: function (data) {
+                    success: function (data2) {
 
-                        console.log("UV Index: " + data.value);
+                        console.log("UV Index: " + data2.value);
+                        $(".uv-button").text(data2.value)
                     }
                 })
 
@@ -40,26 +45,56 @@ $(document).ready(function () {
                     type: "GET",
                     url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&exclude=hourly,minutely,current,alerts&appid=" + APIkey,
                     dataType: "json",
-                    success: function (data) {
+                    success: function (data3) {
 
-                        function timeConverter(value){
+                        console.log(data3)
+
+                        let today = data3.daily[0].dt
+                        let dayOne = data3.daily[1].dt
+                        let dayTwo = data3.daily[2].dt
+                        let dayThree = data3.daily[3].dt
+                        let dayFour = data3.daily[4].dt
+                        let dayFive = data3.daily[5].dt
+
+                        function timeConverter(value) {
                             var dt = new Date(value * 1000);
                             var year = dt.getFullYear();
                             var month = (dt.getMonth() + 1);
                             var newdate = dt.getDate();
                             var formattedTime = month + '/' + newdate + '/' + year
                             console.log(formattedTime);
-                        }
+                            return(formattedTime);
+                        };
 
-                        timeConverter(data.daily[0].dt)
-                        timeConverter(data.daily[1].dt)
-                        timeConverter(data.daily[2].dt)
-                        timeConverter(data.daily[3].dt)
-                        timeConverter(data.daily[4].dt)
-                
-                
+                        $(".city-name").text(searchValue + " " + timeConverter(today));
+
+                        $(".forecast-ones").text(timeConverter(dayOne));
+                        $(".forecast-twos").text(timeConverter(dayTwo));
+                        $(".forecast-threes").text(timeConverter(dayThree));
+                        $(".forecast-fours").text(timeConverter(dayFour));
+                        $(".forecast-fives").text(timeConverter(dayFive));
+
+                        let tempFOne = ((data3.daily[1].temp.max - 273.15) * 1.80 + 32).toFixed(1);
+                        let tempFTwo = ((data3.daily[2].temp.max - 273.15) * 1.80 + 32).toFixed(1);
+                        let tempFThree = ((data3.daily[3].temp.max - 273.15) * 1.80 + 32).toFixed(1);
+                        let tempFFour = ((data3.daily[4].temp.max - 273.15) * 1.80 + 32).toFixed(1);
+                        let tempFFive = ((data3.daily[5].temp.max - 273.15) * 1.80 + 32).toFixed(1);
+
+                        $(".forecast-temp-one").text("Temp: " + tempFOne);
+                        $(".forecast-temp-two").text("Temp: " + tempFTwo);
+                        $(".forecast-temp-three").text("Temp: " + tempFThree);
+                        $(".forecast-temp-four").text("Temp: " + tempFFour);
+                        $(".forecast-temp-five").text("Temp: " + tempFFive);
+
+                        $(".forecast-hum-one").text("Humidity: " + data3.daily[1].humidity);
+                        $(".forecast-hum-two").text("Humidity: " + data3.daily[2].humidity);
+                        $(".forecast-hum-three").text("Humidity: " + data3.daily[3].humidity);
+                        $(".forecast-hum-four").text("Humidity: " + data3.daily[4].humidity);
+                        $(".forecast-hum-five").text("Humidity: " + data3.daily[5].humidity);
                     }
                 })
+
+
             }
         })
 
